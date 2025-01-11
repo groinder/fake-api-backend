@@ -120,4 +120,12 @@ export class FilterProductsDto {
   @IsNumber()
   @Field({ nullable: true })
   categoryId: number;
+
+  @IsOptional()
+  @Field({ nullable: true })
+  order_by: string;
+
+  @IsOptional()
+  @Field({ nullable: true })
+  order: 'ASC' | 'DESC';
 }

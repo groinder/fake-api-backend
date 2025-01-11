@@ -76,6 +76,13 @@ export class ProductsService {
       options.take = params?.limit;
       options.skip = params?.offset;
     }
+
+    if (params?.order_by) {
+      options.order = {
+        [params.order_by]: params?.order || 'ASC',
+      };
+    }
+
     return this.productsRepo.find(options);
   }
 
